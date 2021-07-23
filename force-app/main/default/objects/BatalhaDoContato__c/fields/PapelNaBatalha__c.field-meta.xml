@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PapelNaBatalha__c</fullName>
+    <description>Papel do herói na batalha</description>
+    <externalId>false</externalId>
+    <formula>Contato__r.NomeDeGuerra__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Papel do herói na batalha</inlineHelpText>
+    <label>Papel na Batalha</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

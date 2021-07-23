@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LimiteLevel</fullName>
+    <active>true</active>
+    <description>Garante que o level vai ser de 0 a 100</description>
+    <errorConditionFormula>OR (
+    Level__c &lt; 0,
+    Level__c &gt; 100
+)</errorConditionFormula>
+    <errorDisplayField>Level__c</errorDisplayField>
+    <errorMessage>Habilidade do contato fora do intervalo permitido.</errorMessage>
+</ValidationRule>

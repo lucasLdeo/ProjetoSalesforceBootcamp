@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidaAtualizacaoLevel</fullName>
+    <active>true</active>
+    <description>Verifica quais status do candidato podem alterar o level</description>
+    <errorConditionFormula>AND(
+  OR(
+   ISCHANGED( Level__c ),
+   AND( ISNEW(),  NOT(ISNULL(Level__c)))
+  ),
+   NOT(ISPICKVAL(Contato__r.StatusDoCandidato__c,&apos;Aprovado no Treinamento&apos;) ),
+  NOT(ISPICKVAL( Contato__r.StatusDoCandidato__c , &apos;Aprovado Direto&apos;) ),
+  NOT(ISPICKVAL( Contato__r.StatusDoCandidato__c , &apos;Em Treinamento&apos;) ),
+  NOT(ISPICKVAL( Contato__r.StatusDoCandidato__c , &apos;Reprovado no Treinamento&apos;) )
+)</errorConditionFormula>
+    <errorDisplayField>Level__c</errorDisplayField>
+    <errorMessage>Status do herói não permite atualizar o level da habilidade</errorMessage>
+</ValidationRule>

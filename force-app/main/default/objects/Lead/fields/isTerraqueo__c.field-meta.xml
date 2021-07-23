@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isTerraqueo__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marcar sempre que o usuário pertence ao planeta terra.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Marcar sempre que o usuário pertence ao planeta terra.</inlineHelpText>
+    <label>É terráqueo ?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

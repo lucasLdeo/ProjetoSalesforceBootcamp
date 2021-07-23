@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" renderAs="pdf">         
+    <center>
+    	<h1>Dados do heroi</h1>
+    </center>
+    
+    
+    
+    
+</apex:page>

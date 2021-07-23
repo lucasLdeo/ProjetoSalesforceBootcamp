@@ -1,0 +1,28 @@
+<apex:page standardController="Contact" extensions="EditHabilidadeContatoControllerExtension">
+<apex:form >
+<apex:pageBlock tabStyle="Contact" title="Ferramenta de Edição do {!contact.RecordType.Name} e habilidades">
+    <apex:pageMessages />
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Voltar ao registro" action="{!cancelar}"/>
+            <apex:commandButton value="Salvar alterações" action="{!salvar}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Informações do {!contact.recordtype.name}">
+            <apex:inputField value="{!contact.firstname}" />
+            <apex:inputField value="{!contact.lastname}" />
+            <apex:inputField value="{!contact.NomeDeGuerra__c}" />
+            <apex:inputField value="{!contact.Phone}" />
+            <apex:inputField value="{!contact.Email}" />               
+        </apex:pageBlockSection>
+            <apex:pageBlockSection title="Habilidades do {!contact.recordtype.name}">
+                <apex:dataTable value="{!contact.HabilidadesContato__r}" var="habilidade">
+                    <apex:column >
+                        <apex:inputField value="{!habilidade.Habilidade__c}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:inputField value="{!habilidade.Level__c}" />
+                    </apex:column>
+                </apex:dataTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

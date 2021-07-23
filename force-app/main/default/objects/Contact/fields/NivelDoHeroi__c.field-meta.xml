@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NivelDoHeroi__c</fullName>
+    <description>Nível de Senioridade do Herói</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Nível de Senioridade do Herói</inlineHelpText>
+    <label>Nível do Herói</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aspira</fullName>
+                <default>false</default>
+                <label>Aspira</label>
+            </value>
+            <value>
+                <fullName>Junior</fullName>
+                <default>false</default>
+                <label>Junior</label>
+            </value>
+            <value>
+                <fullName>Pleno</fullName>
+                <default>false</default>
+                <label>Pleno</label>
+            </value>
+            <value>
+                <fullName>Senior</fullName>
+                <default>false</default>
+                <label>Senior</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

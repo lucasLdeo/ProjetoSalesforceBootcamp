@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agora__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOW()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Agora</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

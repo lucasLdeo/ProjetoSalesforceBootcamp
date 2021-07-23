@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EncaminharparaAprovacaoTreinamento__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Iniciar o processo de de aprovação para treinamento</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Marque essa opção para iniciar o processo de de aprovação para treinamento</inlineHelpText>
+    <label>Encaminhar para Aprovação do Treinamento</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>
