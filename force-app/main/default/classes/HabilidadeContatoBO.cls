@@ -1,6 +1,17 @@
 public class HabilidadeContatoBO {
     
-    public static void AtualizaRanking(Set<Id> idContatosDaHabilidade){
+
+    private static final HabilidadeContatoBO instance = new HabilidadeContatoBO();
+
+    private HabilidadeContatoBO(){
+
+    }
+    
+    public static HabilidadeContatoBO getInstance(){
+        return instance; 
+    }
+
+    public void AtualizaRanking(Set<Id> idContatosDaHabilidade){
   
             Map<Id,Contact> mapContatosDaHabilidade = new Map<Id,Contact>([SELECT Id, 
                                                                              		(SELECT Id, Name, Level__c 

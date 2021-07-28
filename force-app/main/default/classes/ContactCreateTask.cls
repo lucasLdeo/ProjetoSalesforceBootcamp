@@ -1,5 +1,5 @@
 global class ContactCreateTask {
-    
+    // Chamada em um Process Builder quando o usuário é aprovado direto.
     @InvocableMethod(label = 'Cria Tarefa para o Contato')
     public static void ContactCreateTask( List<CreateTaskRequest> requests ){
         

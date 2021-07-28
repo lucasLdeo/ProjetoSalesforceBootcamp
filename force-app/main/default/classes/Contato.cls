@@ -8,11 +8,11 @@ public virtual class Contato {
         this.email = email;
     }
     
-    public void informaDados(){
-        
+    public void informaDados(){        
         System.debug('>>> nome ::'+ this.nome);
         System.debug('>>> email ::'+ this.email);
     }
+    
     public static void mostrarTodosContatos(List<Contato> contatos){
         for (Contato personagem : contatos){
             System.debug('>>> personagem ::'+personagem);

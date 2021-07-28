@@ -1,7 +1,5 @@
 @istest
-public class AtualizaRankigTriggerTest {
-	
-    
+public class AtualizaRankigTriggerTest {	    
     @testSetup
      public static void setup(){    
          
@@ -39,8 +37,7 @@ public class AtualizaRankigTriggerTest {
         
         List<HabilidadeContato__c> habilidadesContato = [SELECT Id, NomeHabilidade__c, Ranking__c, Contato__r.NomeDeGuerra__c 
                                                          FROM  HabilidadeContato__c                                                          
-                                                         WHERE Ranking__c != null];
-        
+                                                         WHERE Ranking__c != null];        
         for (HabilidadeContato__c habilidade : habilidadesContato){
         	system.assertEquals(1, habilidade.Ranking__c);    
         }

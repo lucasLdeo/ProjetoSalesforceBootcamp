@@ -1,4 +1,5 @@
 public class HabilidadeContatoTriggerHandler {    
+   
     HabilidadeContatoTriggerHelper helper = new HabilidadeContatoTriggerHelper();
     public void onAfterInsert(List <HabilidadeContato__c> newRecords){       
        helper.atualizaRankingInsert(newRecords); 

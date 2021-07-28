@@ -1,4 +1,4 @@
-trigger Contact on Contact (before insert, after insert , before update, after update) {
+trigger Contact on Contact (before insert, after insert , before update, after update, before delete) {
 	// BEFORE -> antes de salvar no banco 
 	// AFTER -> DEPOIS DE SALVAR NO BANCO
 	// OLD -> VERSÃO ANTERIOR AO UPDATE
@@ -7,7 +7,7 @@ trigger Contact on Contact (before insert, after insert , before update, after u
     
     switch on Trigger.operationType{
         when BEFORE_INSERT{
-            handler.onBeforeInsert(Trigger.new);
+            handler.onBeforeInsert(Trigger.new, Trigger.oldMap);
         }
         when BEFORE_UPDATE{
             handler.onBeforeUpdate(Trigger.new, Trigger.oldMap);
@@ -19,7 +19,8 @@ trigger Contact on Contact (before insert, after insert , before update, after u
             handler.onAfterUpdate(Trigger.new,Trigger.oldMap);
         }
         when BEFORE_DELETE{
-            handler.onBeforeDelete(Trigger.old, Trigger.oldMap);
+            System.debug('BEFORE_DELETE');
+            handler.onBeforeDelete(Trigger.old, Trigger.oldMap);            
         }
     }
 }

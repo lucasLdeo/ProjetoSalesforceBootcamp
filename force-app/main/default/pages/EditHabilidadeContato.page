@@ -14,7 +14,7 @@
             <apex:inputField value="{!contact.Email}" />               
         </apex:pageBlockSection>
             <apex:pageBlockSection title="Habilidades do {!contact.recordtype.name}">
-                <apex:dataTable value="{!contact.HabilidadesContato__r}" var="habilidade">
+                <apex:dataTable value="{!habilidades}" var="habilidade">
                     <apex:column >
                         <apex:inputField value="{!habilidade.Habilidade__c}" />
                     </apex:column>

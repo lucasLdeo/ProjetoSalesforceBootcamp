@@ -1,2 +1,24 @@
-<apex:page >
+<apex:page controller="HeroiPDFApexControler">        
+    <center>
+        
+    	<h1>Dados do heroi</h1>
+    </center>
+    <table>
+        <tr> 
+            <th> Nome de Guerra </th>
+            <td> <apex:outputText value="{!contato.NomeDeGuerra__c}"/></td>
+        </tr>
+        <tr> 
+            <th> First Name </th>
+            <td> <apex:outputText value="{!contato.Firstname}"/></td>
+        </tr>
+        <tr> 
+            <th> Last Name</th>
+            <td> <apex:outputText value="{!contato.Lastname}"/></td>
+        </tr>
+        <tr> 
+            <th> Status do Heroi</th>
+            <td> <apex:outputText value="{!contato.StatusDoCandidato__c}"/></td>
+        </tr>
+    </table>
 </apex:page>

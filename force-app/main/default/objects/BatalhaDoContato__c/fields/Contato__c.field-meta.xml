@@ -8,7 +8,7 @@
     <label>Contato</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Batalhas do Contato</relationshipLabel>
-    <relationshipName>Contato</relationshipName>
+    <relationshipName>BatalhaContato</relationshipName>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>

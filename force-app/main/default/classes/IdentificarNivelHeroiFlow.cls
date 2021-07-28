@@ -1,45 +1,51 @@
 global class IdentificarNivelHeroiFlow {
 
-    @InvocableMethod(label = 'Identifica Nivel do Heroi')
-    public static List<Contact> identificaNivelHeroi(List<contactRequest> requests){
+@InvocableMethod(label = 'Identifica Nivel do Heroi')
+public static List<Contact> identificaNivelHeroi(List<contactRequest> requests){
+    
+    List<Contact> contatos = new List<Contact>();
+    
+    for(contactRequest request : requests){
+        Decimal media = 0;
+        Decimal somaLevel = 0; 
         
-        List<Contact> contatos = new List<Contact>();
-        
-        for(contactRequest request : requests){
-            Decimal media = 0;
-            Decimal somaLevel = 0; 
-            
-            for(HabilidadeContato__c habilidadeContato : request.habilidadesContato){
-                somaLevel += habilidadeContato.Level__c;
-            }
-            
-            media = somaLevel/request.habilidadesContato.size();
-            
-            String nivel = '';
-            if(media >= 80){
-            	nivel = 'Sênior'; 	   
-            }else if(media >= 40){
-                nivel = 'Pleno';
-            }else{
-                nivel = 'Júnior';
-            }                                 
-            //contatos.add(new Contact(Id=request.contactId, nivelDoHeroi__c=nivel));
-            
-            request.contact.NivelDoHeroi__c = nivel;
-            contatos.add(request.contact);
+        for(HabilidadeContato__c habilidadeContato : request.habilidadesContato){
+            somaLevel += habilidadeContato.Level__c;
         }
         
-        update contatos;
-		return contatos;        
+        media = somaLevel/request.habilidadesContato.size();
+        
+        String nivel = '';
+        if(media >= 80){
+            nivel = 'Senior'; 	   
+        }else if(media >= 40){
+            nivel = 'Pleno';
+        }else if(media >= 20){
+            nivel = 'Junior';
+        }else{
+            nivel = 'Aspira';
+        }                                 
+        //contatos.add(new Contact(Id=request.contactId, nivelDoHeroi__c=nivel));
+        
+        request.contact.NivelDoHeroi__c = nivel;
+        if (request.contact.StatusDoCandidato__c == 'Aprovado no treinamento'){
+            request.contact.DataDaAprovacao__c = System.Now();
+            request.contact.ResponsavelAprovacao__c = UserInfo.getUserId();        
+        }    
+        contatos.add(request.contact);
     }
     
-    global class contactRequest{
-        @InvocableVariable(required=true)
-        global Contact contact;
-        @InvocableVariable(required=true)
-        global List<HabilidadeContato__c> habilidadesContato;
-    }
-    
+    update contatos;
+    return contatos;        
+}
+
+global class contactRequest{
+    @InvocableVariable(required=true)
+    global Contact contact;
+    @InvocableVariable(required=true)
+    global List<HabilidadeContato__c> habilidadesContato;
+}
+
 }
 
 //Para brincar no Anonymous window
@@ -50,7 +56,7 @@ global class IdentificarNivelHeroiFlow {
 //Primeira opção de converter uma lista de contatos para um map 
 //Map<Id, Contact> mapContact = new Map<Id, Contact>();
 //for(Contact contato : contatos){
-   // mapContact.put(contato.Id, contato);
+// mapContact.put(contato.Id, contato);
 //}
 
 //opção mais rápida/prática

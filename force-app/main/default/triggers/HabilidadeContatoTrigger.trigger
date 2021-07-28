@@ -6,10 +6,10 @@ trigger HabilidadeContatoTrigger on HabilidadeContato__c (after insert, after up
             handler.onAfterInsert(Trigger.new);
         }
         when AFTER_UPDATE{
+            System.debug('Atualizei');
             handler.onAfterUpdate(Trigger.new,Trigger.oldMap);
         }
-        when BEFORE_DELETE{
-            System.debug('chegou');
+        when BEFORE_DELETE{            
             handler.onBeforeDelete(Trigger.old);
         }
 	}

@@ -7,7 +7,7 @@
     <label>Batalha</label>
     <referenceTo>Batalha__c</referenceTo>
     <relationshipLabel>Batalhas</relationshipLabel>
-    <relationshipName>BatalhasDoContato</relationshipName>
+    <relationshipName>Batalhas</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackTrending>false</trackTrending>
